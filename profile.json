@@ -1,0 +1,525 @@
+{
+    "name": "Test Profile",
+    "canvasSize": 1500,
+    "orientationCorrection": true,
+    "objectDetection": true,
+    "AAMVABarcodeParsing": true,
+    "saveResult": true,
+    "saveImage": true,
+    "outputImage": true,
+    "outputType": "url",
+    "crop": false,
+    "advancedCrop": false,
+    "outputSize": 1000,
+    "obscure": [],
+    "webhook": "",
+    "inferFullName": true,
+    "splitFirstName": false,
+    "transactionAuditReport": true,
+    "twIdCheck": 0,
+    "timezone": "UTC",
+    "thresholds": {
+        "face": 0.5,
+        "nameDualSide": 0.5,
+        "nameVerification": 0.7,
+        "addressVerification": 0.9,
+        "imageForgery": 0.5,
+        "textForgery": 0.5,
+        "recapture": 0.5,
+        "screenDetection": 0.4,
+        "lowTextConfidence": 0.3,
+        "artificialImage": 0.5,
+        "artificialText": 0.5,
+        "faceIdentical": 0.5,
+        "smallImage": 0.5,
+        "blurryImage": 0.5,
+        "cameraPerspective": 0.5,
+        "faceLiveness": 0.2,
+        "faceRecapture": 0.5,
+        "glareDetect": 0.45
+    },
+    "decisionTrigger": {
+        "review": 1,
+        "reject": 1
+    },
+    "decisions": {
+        "UNRECOGNIZED_DOCUMENT": {
+            "enabled": true,
+            "review": -1,
+            "reject": 0,
+            "weight": 1
+        },
+        "UNRECOGNIZED_BACK_DOCUMENT": {
+            "enabled": true,
+            "review": 0,
+            "reject": -1,
+            "weight": 1
+        },
+        "UNRECOGNIZED_BACK_BARCODE": {
+            "enabled": true,
+            "review": -1,
+            "reject": -1,
+            "weight": 1
+        },
+        "INVALID_BACK_DOCUMENT": {
+            "enabled": true,
+            "review": -1,
+            "reject": 0,
+            "weight": 1
+        },
+        "SELFIE_FACE_NOT_FOUND": {
+            "enabled": true,
+            "review": -1,
+            "reject": 0,
+            "weight": 1
+        },
+        "SELFIE_MULTIPLE_FACES": {
+            "enabled": true,
+            "review": -1,
+            "reject": 0,
+            "weight": 1
+        },
+        "DOCUMENT_FACE_NOT_FOUND": {
+            "enabled": true,
+            "review": -1,
+            "reject": 0,
+            "weight": 1
+        },
+        "DOCUMENT_FACE_LANDMARK_ERR": {
+            "enabled": true,
+            "review": -1,
+            "reject": 0,
+            "weight": 1
+        },
+        "SELFIE_FACE_LANDMARK_ERR": {
+            "enabled": true,
+            "review": -1,
+            "reject": 0,
+            "weight": 1
+        },
+        "INTERNAL_FACE_VERIFICATION_ERR": {
+            "enabled": true,
+            "review": 0,
+            "reject": -1,
+            "weight": 1
+        },
+        "FACE_MISMATCH": {
+            "enabled": true,
+            "review": -1,
+            "reject": 0,
+            "weight": 1
+        },
+        "FACE_IDENTICAL": {
+            "enabled": true,
+            "review": 0,
+            "reject": -1,
+            "weight": 1
+        },
+        "FACE_LIVENESS_ERR": {
+            "enabled": true,
+            "review": -1,
+            "reject": 0,
+            "weight": 1
+        },
+        "RECAPTURED_FACE": {
+            "enabled": true,
+            "review": -1,
+            "reject": 0,
+            "weight": 1
+        },
+        "DOCUMENT_COUNTRY_MISMATCH": {
+            "enabled": true,
+            "review": -1,
+            "reject": 0,
+            "weight": 1
+        },
+        "DOCUMENT_STATE_MISMATCH": {
+            "enabled": true,
+            "review": -1,
+            "reject": 0,
+            "weight": 1
+        },
+        "DOCUMENT_NAME_MISMATCH": {
+            "enabled": true,
+            "review": -1,
+            "reject": 0,
+            "weight": 1
+        },
+        "DOCUMENT_DOB_MISMATCH": {
+            "enabled": true,
+            "review": -1,
+            "reject": 0,
+            "weight": 1
+        },
+        "MISSING_EXPIRY_DATE": {
+            "enabled": true,
+            "review": -1,
+            "reject": 0,
+            "weight": 1
+        },
+        "MISSING_ISSUE_DATE": {
+            "enabled": true,
+            "review": -1,
+            "reject": 0,
+            "weight": 1
+        },
+        "MISSING_BIRTH_DATE": {
+            "enabled": true,
+            "review": -1,
+            "reject": 0,
+            "weight": 1
+        },
+        "MISSING_DOCUMENT_NUMBER": {
+            "enabled": true,
+            "review": -1,
+            "reject": 0,
+            "weight": 1
+        },
+        "MISSING_PERSONAL_NUMBER": {
+            "enabled": true,
+            "review": -1,
+            "reject": 0,
+            "weight": 1
+        },
+        "MISSING_ADDRESS": {
+            "enabled": true,
+            "review": -1,
+            "reject": 0,
+            "weight": 1
+        },
+        "MISSING_POSTCODE": {
+            "enabled": true,
+            "review": 0,
+            "reject": -1,
+            "weight": 1
+        },
+        "MISSING_NAME": {
+            "enabled": true,
+            "review": -1,
+            "reject": 0,
+            "weight": 1
+        },
+        "MISSING_LOCAL_NAME": {
+            "enabled": true,
+            "review": 0,
+            "reject": -1,
+            "weight": 1
+        },
+        "MISSING_GENDER": {
+            "enabled": true,
+            "review": 0,
+            "reject": -1,
+            "weight": 1
+        },
+        "MISSING_HEIGHT": {
+            "enabled": true,
+            "review": -1,
+            "reject": -1,
+            "weight": 1
+        },
+        "MISSING_WEIGHT": {
+            "enabled": true,
+            "review": -1,
+            "reject": -1,
+            "weight": 1
+        },
+        "MISSING_HAIR_COLOR": {
+            "enabled": true,
+            "review": -1,
+            "reject": -1,
+            "weight": 1
+        },
+        "MISSING_EYE_COLOR": {
+            "enabled": true,
+            "review": -1,
+            "reject": -1,
+            "weight": 1
+        },
+        "MISSING_RESTRICTIONS": {
+            "enabled": true,
+            "review": -1,
+            "reject": 0,
+            "weight": 1
+        },
+        "MISSING_VEHICLE_CLASS": {
+            "enabled": true,
+            "review": -1,
+            "reject": -1,
+            "weight": 1
+        },
+        "MISSING_ENDORSEMENT": {
+            "enabled": true,
+            "review": -1,
+            "reject": -1,
+            "weight": 1
+        },
+        "MISSING_BUSINESS_REGISTRATION_NUMBER": {
+            "enabled": true,
+            "review": -1,
+            "reject": 0,
+            "weight": 1
+        },
+        "MISSING_BUSINESS_NAME": {
+            "enabled": true,
+            "review": -1,
+            "reject": 0,
+            "weight": 1
+        },
+        "MISSING_ENTITY_TYPE": {
+            "enabled": true,
+            "review": -1,
+            "reject": 0,
+            "weight": 1
+        },
+        "UNDER_18": {
+            "enabled": true,
+            "review": -1,
+            "reject": -1,
+            "weight": 1
+        },
+        "UNDER_19": {
+            "enabled": true,
+            "review": -1,
+            "reject": -1,
+            "weight": 1
+        },
+        "UNDER_20": {
+            "enabled": true,
+            "review": -1,
+            "reject": -1,
+            "weight": 1
+        },
+        "UNDER_21": {
+            "enabled": true,
+            "review": -1,
+            "reject": -1,
+            "weight": 1
+        },
+        "DOCUMENT_EXPIRED": {
+            "enabled": true,
+            "review": -1,
+            "reject": 0,
+            "weight": 1
+        },
+        "NAME_VERIFICATION_FAILED": {
+            "enabled": true,
+            "review": -1,
+            "reject": 0,
+            "weight": 1
+        },
+        "DOB_VERIFICATION_FAILED": {
+            "enabled": true,
+            "review": -1,
+            "reject": 0,
+            "weight": 1
+        },
+        "AGE_VERIFICATION_FAILED": {
+            "enabled": true,
+            "review": -1,
+            "reject": 0,
+            "weight": 1
+        },
+        "ID_NUMBER_VERIFICATION_FAILED": {
+            "enabled": true,
+            "review": -1,
+            "reject": 0,
+            "weight": 1
+        },
+        "ADDRESS_VERIFICATION_FAILED": {
+            "enabled": true,
+            "review": -1,
+            "reject": 0,
+            "weight": 1
+        },
+        "POSTCODE_VERIFICATION_FAILED": {
+            "enabled": true,
+            "review": -1,
+            "reject": 0,
+            "weight": 1
+        },
+        "TYPE_NOT_ACCEPTED": {
+            "enabled": true,
+            "review": -1,
+            "reject": 0,
+            "weight": 1
+        },
+        "COUNTRY_NOT_ACCEPTED": {
+            "enabled": true,
+            "review": -1,
+            "reject": 0,
+            "weight": 1
+        },
+        "STATE_NOT_ACCEPTED": {
+            "enabled": true,
+            "review": -1,
+            "reject": 0,
+            "weight": 1
+        },
+        "RECAPTURED_DOCUMENT": {
+            "enabled": true,
+            "review": 0,
+            "reject": -1,
+            "weight": 1
+        },
+        "SCREEN_DETECTED": {
+            "enabled": true,
+            "review": 0,
+            "reject": -1,
+            "weight": 1
+        },
+        "IMAGE_FORGERY": {
+            "enabled": true,
+            "review": 0,
+            "reject": -1,
+            "weight": 1
+        },
+        "FEATURE_VERIFICATION_FAILED": {
+            "enabled": true,
+            "review": 0,
+            "reject": -1,
+            "weight": 1
+        },
+        "IMAGE_EDITED": {
+            "enabled": true,
+            "review": 0,
+            "reject": -1,
+            "weight": 1
+        },
+        "AML_SANCTION": {
+            "enabled": true,
+            "review": 0,
+            "reject": -1,
+            "weight": 1
+        },
+        "AML_CRIME": {
+            "enabled": true,
+            "review": 0,
+            "reject": -1,
+            "weight": 1
+        },
+        "AML_PEP": {
+            "enabled": true,
+            "review": 0,
+            "reject": -1,
+            "weight": 1
+        },
+        "LOW_TEXT_CONFIDENCE": {
+            "enabled": true,
+            "review": -1,
+            "reject": -1,
+            "weight": 1
+        },
+        "FAKE_ID": {
+            "enabled": true,
+            "review": -1,
+            "reject": 0,
+            "weight": 1
+        },
+        "ARTIFICIAL_IMAGE": {
+            "enabled": true,
+            "review": -1,
+            "reject": 0,
+            "weight": 1
+        },
+        "ARTIFICIAL_TEXT": {
+            "enabled": true,
+            "review": -1,
+            "reject": 0,
+            "weight": 1
+        },
+        "TEXT_FORGERY": {
+            "enabled": true,
+            "review": 0,
+            "reject": -1,
+            "weight": 1
+        },
+        "IP_COUNTRY_MISMATCH": {
+            "enabled": true,
+            "review": -1,
+            "reject": -1,
+            "weight": 1
+        },
+        "IMAGE_TOO_SMALL": {
+            "enabled": true,
+            "review": -1,
+            "reject": 0,
+            "weight": 1
+        },
+        "IMAGE_TOO_BLURRY": {
+            "enabled": true,
+            "review": -1,
+            "reject": 0,
+            "weight": 1
+        },
+        "INVALID_CAMERA_PERSPECTIVE": {
+            "enabled": true,
+            "review": 0,
+            "reject": -1,
+            "weight": 1
+        },
+        "CHECK_DIGIT_FAILED": {
+            "enabled": true,
+            "review": -1,
+            "reject": 0,
+            "weight": 1
+        },
+        "BLACK_WHITE_DOCUMENT": {
+            "enabled": true,
+            "review": 0,
+            "reject": -1,
+            "weight": 1
+        },
+        "GLARE_DETECTED": {
+            "enabled": false,
+            "review": 0,
+            "reject": -1,
+            "weight": 1
+        },
+        "PHYSICAL_DOCUMENT_MISSING": {
+            "enabled": true,
+            "review": 0,
+            "reject": -1,
+            "weight": 1
+        },
+        "UNKNOWN": {
+            "enabled": true,
+            "review": -1,
+            "reject": -1,
+            "weight": 1
+        }
+    },
+    "docupass": {
+        "companyName": "",
+        "welcomeMessage": "",
+        "logoURL": "",
+        "allowIframe": true,
+        "restrictDevice": 0,
+        "allowFileUpload": false,
+        "documentCaptureMode": 0,
+        "faceCaptureMode": 0,
+        "documentSide": 0,
+        "cameraMode": 0,
+        "reviewData": false,
+        "maxAttempt": 2,
+        "trackGps": false,
+        "acceptUrl": "",
+        "reviewUrl": "",
+        "rejectUrl": "",
+        "expireUrl": "",
+        "phoneVerification": 0,
+        "smsContent": "Identity Verification Link: $u",
+        "customField": [],
+        "customDocuPassURL": "",
+        "expiry": 0,
+        "qrColor": "000000",
+        "qrBGColor": "FFFFFF",
+        "qrSize": 8,
+        "qrMargin": 8,
+        "docupassAuditReport": false
+    },
+    "acceptedDocuments": {
+        "documentType": "ID",
+        "documentCountry": "EG",
+        "documentState": ""
+    }
+}
