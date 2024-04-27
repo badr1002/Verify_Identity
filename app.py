@@ -26,7 +26,7 @@ def verifyInsurance():
             return 'Missing file parts'
 
         front_file = request.files['front']
-        if front_file.filename == '':
+        if front_file and front_file.filename == '':
             return 'No selected file'
         back_file = request.files['back'] if 'back' in request.files else None
         face_file = request.files['face'] if 'face' in request.files else None
@@ -48,24 +48,22 @@ def verifyInsurance():
         }
 
         payload = {
-            "document": frontUrl,
-            "documentBack": backUrl if back_file.filename else None,
-            "face": faceUrl if face_file.filename else None,
+            "document": frontUrl,           
             "profile": profile or config("PROFILE")
         }
-        if not back_file.filename:
-            del payload["documentBack"]
-        if not face_file.filename:
-            del payload["face"]
+        if backUrl:
+            payload["document_back"] = backUrl
+        if faceUrl:
+            payload["face"] = faceUrl
 
         response = requests.post(url, json=payload, headers=headers)
 
         if response.status_code != 200:
             return "Failed to process the request. Status code:", response.status_code
         delete_file(front_file.filename)
-        if back_file.filename:
+        if back_file and back_file.filename:
             delete_file(back_file.filename)
-        if face_file.filename:
+        if face_file and face_file.filename:
             delete_file(face_file.filename)
         parsed_data = json.loads(response.text)
 
